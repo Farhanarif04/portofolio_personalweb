@@ -4,14 +4,21 @@
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
-    "routes": [{
+    "routes": [
+        {
+        "src": "/img(.*)",
+        "dest": "/public/img/"
+    },
+    {
         "src": "/(.*)",
         "dest": "/api/index.php"
-    }],
+    }
+    ],
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
         "APP_URL": "https://yourprojectdomain.com",
+        "APP_KEY": "base64:+or2lgRH4fGOUUMfbW38HDTTrNtx/VD6GEiATV0vpgo=",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
